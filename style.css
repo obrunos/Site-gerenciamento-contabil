@@ -1,0 +1,196 @@
+:root {
+  --cor-primaria: #000000;     /* Preto da sua logo */
+  --cor-secundaria: #FDD835;   /* Amarelo da sua logo */
+  --cor-accento: #7C2AEA;      /* Roxo da sua logo */
+  --cor-fundo: #F5F5F5;
+  --cor-texto: #333333;        /* melhor contraste */
+  --border-radius: 12px;
+  --shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: var(--cor-primaria);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+.sidebar .logo {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--cor-secundaria);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.sidebar nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar nav a,
+.sidebar nav button {
+  padding: 0.75rem 1.5rem;
+  color: var(--cor-fundo);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  margin: 0.25rem 1rem;
+  transition: background 0.2s;
+}
+.sidebar nav a.active,
+.sidebar nav a:hover,
+.sidebar nav button:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Main */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+.header h1 {
+  font-size: 1.5rem;
+  color: var(--cor-primaria);
+}
+.content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  color: var(--cor-texto);
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+.card.welcome {
+  background: var(--cor-accento);
+  color: #fff;
+  text-align: center;
+}
+.card.welcome h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Forms */
+form input,
+form select,
+form button,
+.table input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  color: var(--cor-primaria);
+}
+form button {
+  background: var(--cor-secundaria);
+  color: var(--cor-primaria);
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: filter 0.2s;
+}
+form button:hover {
+  filter: brightness(0.9);
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+.table th,
+.table td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+.table th {
+  background: var(--cor-fundo);
+}
+
+/* Calendar */
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.calendar-nav button {
+  background: var(--cor-accento);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+.calendar-nav button:hover {
+  filter: brightness(0.9);
+}
+.calendar-nav .month-year {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--cor-primaria);
+}
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: #ddd;
+}
+.calendar-day {
+  background: #fff;
+  min-height: 100px;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  position: relative;
+  color: var(--cor-primaria);
+}
+.calendar-day .date {
+  font-weight: bold;
+}
+.calendar-event {
+  background: var(--cor-secundaria);
+  color: var(--cor-primaria);
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.25rem;
+  border-radius: var(--border-radius);
+  font-size: 0.75rem;
+}
